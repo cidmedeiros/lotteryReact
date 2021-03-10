@@ -7,8 +7,6 @@ class App extends Component {
   //the Reactor render method accpets promises right off the batch
   render(){
     if(web3){
-      web3.eth.getAccounts().then(console.log);
-      //web3.eth.requestAccounts().then(console.log);
       return (
         <div className="App">
           <header className="App-header">

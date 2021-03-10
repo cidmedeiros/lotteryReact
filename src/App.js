@@ -1,25 +1,37 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import web3 from './web3';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component {
+  //the Reactor render method accpets promises right off the batch
+  render(){
+    if(web3){
+      web3.eth.getAccounts().then(console.log);
+      //web3.eth.requestAccounts().then(console.log);
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
+            </p>
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+            </a>
+          </header>
+        </div>
+      );
+    }
+    else {
+      console.log('something worng', web3);
+    }
+  }
+};
 
 export default App;

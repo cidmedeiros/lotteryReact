@@ -1,7 +1,7 @@
 import web3 from '../src/web3';
 
 //Both variables came from the deployment operation.
-const contractAdress = ' 0x8B95dbe58034108135A82E4646e23137958020B3';
+const contractAdress = '0x817ac2Ed366D46ACf304429Fc8B216e0C6e79E22';
 
 const abi = [
     {"constant":true,"inputs":[],"name":"manager","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},

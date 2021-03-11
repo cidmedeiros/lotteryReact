@@ -26,7 +26,5 @@ const deploy = async () => {
   console.log('abi', interface);
 };
 
-deploy();
-
 //use node deploy.js to deploy the contract
 deploy();

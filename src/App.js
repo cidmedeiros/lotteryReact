@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import web3 from './web3';
 import lottery from './lotteryContract';
 
+/* Time Line on handling Contracts:
+      * Component renders ->
+      * componentDidMount called ->
+      * Call methods on contract ->
+      * set data on state;
+*/
 class App extends Component {
   constructor(props){
     super(props);
@@ -19,18 +23,13 @@ class App extends Component {
 
   //the Reactor render method accpets promises right off the batch
   render(){
-    if(web3){
-      return (
-        <div>
-          <h2>Lottery Contract</h2>
-          <p>This Contract is managed by {this.state.manager} </p>
-        </div>
-      );
-    }
-    else {
-      console.log('something worng', web3);
-    }
+    return (
+      <div>
+        <h2>Lottery Contract</h2>
+        <p>This Contract is managed by {this.state.manager} </p>
+      </div>
+    );
   }
-};
+}
 
 export default App;

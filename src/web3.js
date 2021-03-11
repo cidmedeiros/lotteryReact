@@ -5,7 +5,7 @@ const web3 = new Web3(window.web3.currentProvider);
 
 //Metamask requires the user to grant the dapp authorization to access the user's account data
 window.addEventListener("load", async () => {
-  // Modern dapp browsers has an injected Ethereum provider or the Ethereum provider is injected by Metamask itself. However in the latter case the provider is NOT automatically populated with the user's account  
+  // Modern dapp browsers has an injected Ethereum provider or the Ethereum provider is injected by Metamask itself. However in none of the cases the provider is NOT automatically populated with the user's account. Conventional browsers without the Metamask extension is not going to work. 
   if (window.ethereum) {
     //Setting up the web3 property of the browser (client) to the same one used by the server in order to allow all dapp's function to work accordinly to dapp's server design.
     window.web3 = new Web3(window.ethereum);

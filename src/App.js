@@ -16,7 +16,8 @@ class App extends Component {
     this.state = {
       manager:'',
       players: [],
-      balance: ''
+      balance: '',
+      value: ''
     };
   }
   //componentDidMount() is a lifecycle method, a hook that gets invoked right after a React component has been mounted aka after the first render() lifecycle.
@@ -42,11 +43,13 @@ class App extends Component {
         <form>
           <h4>Want to try your lucky?</h4>
           <div>
-            <label></label>
+            <label>Amount of ether to enter</label>
             <input
-              onChange={event => this.setState}
+            value = {this.state.value}
+              onChange={event => this.setState({value: event.target.value})}
             />
           </div>
+          <button>Enter</button>
         </form>
       </div>
     );

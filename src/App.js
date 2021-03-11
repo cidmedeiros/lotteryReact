@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import web3 from './web3';
+import lottery from '../contracts/lotteryContract';
 
 class App extends Component {
   //the Reactor render method accpets promises right off the batch

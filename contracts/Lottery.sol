@@ -10,8 +10,14 @@ contract Lottery {
     }
 
     function enter() public payable {
+        /* payble functions requires the sender account and the range value allowed to pay for the transaction
+           require() method checks for validity on the boolean expression, and only if it get's evaluated to True
+           the rest of the function's body is allowed to run.
+        */
+        //set a minimum for entering the lottery
         require(msg.value > .01 ether);
-
+        
+        //What I'm paying for? I'm paying for the players's account number to be stored on the Smart Contract actually living in the blockchain
         players.push(msg.sender);
     }
 
@@ -28,6 +34,7 @@ contract Lottery {
         players = new address[](0);
     }
 
+    //modifier is a method
     modifier restricted() {
         require(msg.sender == manager);
         _;

@@ -25,12 +25,12 @@ contract Lottery {
         return uint(keccak256(block.difficulty, now, players));
     }
 
-    function pickWinner() public restricted {
+    function pickWinner() public payable restricted {
         //pseudo random pick the winner
         uint index = random() % players.length;
         //tranfer the prize
         players[index].transfer(this.balance);
-        //reset the array of player to a new round
+        //reset the array of player to a new round. The zero forces all pointers to zeroed out in the memory.
         players = new address[](0);
     }
 
